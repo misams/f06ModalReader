@@ -1,0 +1,1628 @@
+1
+ 
+ 
+ 
+ 
+                                                             
+                 Copyright 2018 Siemens Product Lifecycle    
+                        Management Software Inc.             
+                         All Rights Reserved.                
+                                                             
+               This software and related documentation are   
+                 proprietary to Siemens Product Lifecycle    
+                        Management Software Inc.             
+                                                             
+              Siemens and the Siemens logo are registered    
+           trademarks of Siemens AG. Simcenter is a trademark
+              or registered trademark of Siemens Product     
+               Lifecycle Management Software Inc. or its     
+             subsidiaries in the United States and in other  
+             countries.  NASTRAN is a registered trademark   
+                 of the National Aeronautics and Space       
+                 Administration.  All other trademarks,      
+              registered trademarks or service marks belong  
+                      to their respective holders.           
+                                                             
+           LIMITATIONS TO U.S. GOVERNMENT RIGHTS. UNPUBLISHED
+           - RIGHTS RESERVED UNDER THE COPYRIGHT LAWS OF THE 
+            UNITED STATES. This computer software and related
+               computer software documentation have been     
+            developed exclusively at private expense and are 
+           provided subject to the following rights:  If this
+               computer software and computer  software      
+            documentation qualify as "commercial items" (as  
+             that term is defined in FAR 2.101), their use,  
+            duplication or disclosure by the U.S. Government 
+           is subject to the protections and restrictions as 
+            set forth in the Siemens commercial license for  
+            software and/or documentation, as prescribed in  
+           FAR 12.212 and FAR 27.405(b)(2)(i) (for civilian  
+             agencies) and in DFARS 227.7202-1(a) and DFARS  
+           227.7202-3(a) (for the Department of Defense), or 
+           any successor or similar regulation, as applicable
+           or as amended from time to time.  If this computer
+           software and computer documentation do not qualify
+            as "commercial items", then they are "restricted 
+           computer software" and are provided with "restric-
+            tive rights", and their use, duplication or dis- 
+            closure by the U.S. Government is subject to the 
+            protections and restrictions as set forth in FAR 
+           27.404(b) and FAR 52-227-14 (for civilian agencies
+           ), and DFARS 227.7203-5(c) and DFARS 252.227-7014 
+           (for the Department of Defense), or any successor 
+           or similar regulation, as applicable or as amended
+              from time to time.  Siemens PLM Software Inc.  
+            5800 Granite Parkway, Suite 600, Plano, TX 75024 
+
+                * * * * * * * * * * * * * * * * * * * *
+                * * * * * * * * * * * * * * * * * * * *
+                * *                                 * *
+                * *                                 * *
+                * *                                 * *
+                * *                                 * *
+                * *     Simcenter Nastran 2019.1    * *
+                * *                                 * *
+                * *       VERSION - 1859.0018       * *
+                * *                                 * *
+                * *          MAR 22, 2019           * *
+                * *                                 * *
+                * *                                 * *
+                * *Intel64 Family 6 Model 45 Steppi * *
+                * *                                 * *
+                * *MODEL Intel(R) Xeon(R) CPU E5-26 * *
+                * *                                 * *
+                * *  Windows 7 SP1 Service Pack 1   * *
+                * *                                 * *
+                * *       Compiled for X86-64       * *
+                * *                                 * *
+                * * * * * * * * * * * * * * * * * * * *
+                * * * * * * * * * * * * * * * * * * * *
+1 
+  
+                  Welcome to Simcenter Nastran 2019.1
+                  -----------------------------------
+  
+  
+ This "news" information can be turned off by setting "news=no" in the runtime
+ configuration (RC) file.  The "news" keyword can be set in the system RC file
+ for global, or multi-user control, and in a local file for local control.
+ Individual jobs can be controlled by setting news to yes or no on the command
+ line.
+1                                                                               MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE     1
+                                                                                                                                    
+0        N A S T R A N    F I L E    A N D    S Y S T E M    P A R A M E T E R    E C H O                                           
+0                                                                                                                                   
+                                                                                                                                    
+                                                                                                                                    
+     NASTRAN BUFFSIZE=32769 $(C:/PROGRAM FILES/SIEMENS/NX/NXNASTRAN/CONF/NASTRAN.RCF[
+     NASTRAN BUFFPOOL=49135                                                          
+     NASTRAN DIAGA=128 DIAGB=0 $(C:/PROGRAM FILES/SIEMENS/NX/NXNASTRAN/CONF/NASTRAN.R
+     NASTRAN SYSTEM(442)=2 $(COMMAND LINE[7])                                        
+     NASTRAN PARALLEL=12 $(COMMAND LINE[8])                                          
+     NASTRAN REAL=17141071872 $(MEMORY LIMIT FOR MPI AND OTHER SPECIALIZED MODULES)  
+     $                                                                               
+     $                                                                               
+     $                                                                               
+1                                                                               MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE     2
+                                                                                                                                    
+0        N A S T R A N    E X E C U T I V E    C O N T R O L    E C H O                                                             
+0                                                                                                                                   
+                                                                                                                                    
+                                                                                                                                    
+     SOL 103                                                                                 
+     TIME 5                                                                                  
+     CEND                                                                                    
+1    GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE     3
+                                                                                                                                    
+0                                                                                                                                   
+0                                        C A S E    C O N T R O L    E C H O                                                        
+                 COMMAND                                                                                                            
+                 COUNT                                                                                                              
+                  1      TITLE = GROUNDCHECK                                                           
+                  2      ECHO = NONE                                                                             
+                  3      $                                                                                       
+                  4      $SPC = 1                                                                                
+                  5      $                                                                                       
+                  6      OUTPUT                                                                                  
+                  7      DISPLACEMENT(SORT2, PLOT,REAL) = ALL                                                    
+                  8      FORCE(PLOT,REAL,CENTER) = ALL                                                           
+                  9      MEFFMASS(PRINT,SUMMARY,FRACSUM) = YES                                                   
+                 10      GROUNDCHECK(PRINT,SET=(ALL),DATAREC=YES)=YES                                            
+                 11      WEIGHTCHECK=YES                                                                         
+                 12      $                                                                                       
+                 13      SUBCASE 1                                                                               
+                 14      SUPER= 10                                                                               
+                 15      K2GG= KSE                                                                               
+                 16      M2GG= MSE                                                                               
+                 17      SUBCASE 2                                                                               
+                 18      SUPER= 0                                                                                
+                 19      METHOD= 200                                                                             
+                 20      $                                                                                       
+                 21      BEGIN BULK                                                                              
+0                             INPUT BULK DATA ENTRY COUNT =         440
+0                       TOTAL COUNT=       379
+0                             INPUT BULK DATA ENTRY COUNT =      232785
+0                       TOTAL COUNT=    232767
+
+
+                                        M O D E L   S U M M A R Y
+
+                                   NUMBER OF GRID     POINTS   =      105
+                                   NUMBER OF SPOINT   ENTRIES  =       26
+ 
+ 
+                                   NUMBER OF CBEAM    ELEMENTS =       42
+                                   NUMBER OF CONM2    ELEMENTS =        1
+ 
+                                   NUMBER OF RBE2     ELEMENTS =        1
+                                   NUMBER OF RBE3     ELEMENTS =        1
+ *** USER INFORMATION MESSAGE 4109 (OUTPBN2)
+     THE LABEL IS NX2019.1 FOR FORTRAN UNIT 12
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =        7 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =        8 RECORDS.)
+     (TOTAL DATA WRITTEN FOR TAPE LABEL =       17 WORDS.)
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE     4
+                                                                                                                                    
+0                                                                                                                                   
+0                                                                                                                                   
+                                                                                                                                    
+                                                                                                                                    
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK PVT0     WRITTEN ON FORTRAN UNIT  12, TRL =
+                    101                18                 0                 0                 0                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =       18 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       19 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =       44 WORDS.)
+
+
+                                        M O D E L   S U M M A R Y
+
+                                   NUMBER OF GRID     POINTS   =       61
+                                   NUMBER OF SPOINT   ENTRIES  =       26
+ 
+ 
+                                   NUMBER OF PLOTEL   ELEMENTS =       38
+ 
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE     5
+                                                                                                                                    
+0                                                                                                                                   
+ 
+0                                             SUPERELEMENT DEFINITION TABLE (SORTED BY SEID)                                         
+0               PRIMARY    PROCESS  DOWNSTREAM
+ SUPERELEMENT SUPERELEMENT  ORDER  SUPERELEMENT            TYPE                                 LABEL
+ ------------ ------------ ------- ------------ -----------------------------  ------------------------------------------------
+         0            0         2          0    RESIDUAL STRUCTURE                                                                   
+        10            0         1          0    PRIMARY (BEGIN SUPER)                                                                
+ 
+0                                             SUPERELEMENT DEFINITION TABLE (SORTED BY PROCESS ORDER)                                
+0               PRIMARY    PROCESS  DOWNSTREAM
+ SUPERELEMENT SUPERELEMENT  ORDER  SUPERELEMENT            TYPE                                 LABEL
+ ------------ ------------ ------- ------------ -----------------------------  ------------------------------------------------
+        10            0         1          0    PRIMARY (BEGIN SUPER)                                                                
+         0            0         2          0    RESIDUAL STRUCTURE                                                                   
+0
+                            TABLE OF DOWNSTREAM SUPERELEMENTS FOR EACH SUPERELEMENT
+0 SUPERELEMENT                    DOWNSTREAM SUPERELEMENTS IN DOWNSTREAM ORDER
+  ------------  --------------------------------------------------------------------------------
+          10           0
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE     6
+                                                                                                                                    
+0                                                                                                                                   
+0                                             S U P E R E L E M E N T   T R E E
+0                              ( CONFIGURATION = SINGLE LEVEL   NO. LEVELS =  1     NO. TIPS =   1 )
+0   TIP     LEVEL     LEVEL     LEVEL     LEVEL     LEVEL     LEVEL     LEVEL     LEVEL     LEVEL     LEVEL     LEVEL     LEVEL
+   INDEX     -1-       -2-       -3-       -4-       -5-       -6-       -7-       -8-       -9-      -10-      -11-      -12-
+
+      1        10                                                                                                                    
+
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE     7
+                                                                                                                                    
+0                                                                                                                                   
+0                                              BOUNDARY SEQUENCE ASSIGNMENT TABLE
+0  BOUNDARY
+ SEQUENCE ID --------------------------------- ASSIGNED TO POINT ID (SUPERELEMENT) ---------------------------------
+
+          1B   4000001 (       0)  4000001 (      10)                                                                                
+          2B   4000002 (       0)  4000002 (      10)                                                                                
+          3B   4000003 (       0)  4000003 (      10)                                                                                
+          4B   4000004 (       0)  4000004 (      10)                                                                                
+          5B   4000005 (       0)  4000005 (      10)                                                                                
+          6B   4000006 (       0)  4000006 (      10)                                                                                
+          7B   4000007 (       0)  4000007 (      10)                                                                                
+          8B   4000008 (       0)  4000008 (      10)                                                                                
+          9B   4000009 (       0)  4000009 (      10)                                                                                
+         10B   4000010 (       0)  4000010 (      10)                                                                                
+         11B   4000011 (       0)  4000011 (      10)                                                                                
+         12B   4000012 (       0)  4000012 (      10)                                                                                
+         13B   4000013 (       0)  4000013 (      10)                                                                                
+         14B   4000014 (       0)  4000014 (      10)                                                                                
+         15B   4000015 (       0)  4000015 (      10)                                                                                
+         16B   4000016 (       0)  4000016 (      10)                                                                                
+         17B   4000017 (       0)  4000017 (      10)                                                                                
+         18B   4000018 (       0)  4000018 (      10)                                                                                
+         19B   4000019 (       0)  4000019 (      10)                                                                                
+         20B   4000020 (       0)  4000020 (      10)                                                                                
+         21B   4000021 (       0)  4000021 (      10)                                                                                
+         22B   4000022 (       0)  4000022 (      10)                                                                                
+         23B   4000023 (       0)  4000023 (      10)                                                                                
+         24B   4000024 (       0)  4000024 (      10)                                                                                
+         25B   4000025 (       0)  4000025 (      10)                                                                                
+         26B   4000026 (       0)  4000026 (      10)                                                                                
+         27B   4000027 (       0)  4000027 (      10)                                                                                
+         28B   4000028 (       0)  4000028 (      10)                                                                                
+         29B   4000029 (       0)  4000029 (      10)                                                                                
+         30B   4000030 (       0)  4000030 (      10)                                                                                
+         31B   4000103 (       0)  4000103 (      10)                                                                                
+         32B   4000104 (       0)  4000104 (      10)                                                                                
+         33B   4000106 (       0)  4000106 (      10)                                                                                
+         34B   4000107 (       0)  4000107 (      10)                                                                                
+         35B   4000110 (       0)  4000110 (      10)                                                                                
+         36B   4000111 (       0)  4000111 (      10)                                                                                
+         37B   4000115 (       0)  4000115 (      10)                                                                                
+         38B   4000117 (       0)  4000117 (      10)                                                                                
+         39B   4000118 (       0)  4000118 (      10)                                                                                
+         40B   4000119 (       0)  4000119 (      10)                                                                                
+         41B   4000121 (       0)  4000121 (      10)                                                                                
+         42B   4000122 (       0)  4000122 (      10)                                                                                
+         43B   4000500 (       0)  4000500 (      10)                                                                                
+         44B   4000501 (       0)  4000501 (      10)                                                                                
+         45B   4000502 (       0)  4000502 (      10)                                                                                
+         46B   4000503 (       0)  4000503 (      10)                                                                                
+         47B   4000504 (       0)  4000504 (      10)                                                                                
+         48B   4000505 (       0)  4000505 (      10)                                                                                
+         49B   4000506 (       0)  4000506 (      10)                                                                                
+         50B   4000507 (       0)  4000507 (      10)                                                                                
+         51B   4000508 (       0)  4000508 (      10)                                                                                
+         52B   4000509 (       0)  4000509 (      10)                                                                                
+         53B   4000510 (       0)  4000510 (      10)                                                                                
+         54B   4000511 (       0)  4000511 (      10)                                                                                
+         55B   4000512 (       0)  4000512 (      10)                                                                                
+         56B   4000513 (       0)  4000513 (      10)                                                                                
+         57B   4000514 (       0)  4000514 (      10)                                                                                
+         58B   4000515 (       0)  4000515 (      10)                                                                                
+         59B   4000516 (       0)  4000516 (      10)                                                                                
+         60B   4000517 (       0)  4000517 (      10)                                                                                
+         61B   4000518 (       0)  4000518 (      10)                                                                                
+         62B  10400001 (       0) 10400001 (      10)                                                                                
+         63B  10400002 (       0) 10400002 (      10)                                                                                
+         64B  10400003 (       0) 10400003 (      10)                                                                                
+         65B  10400004 (       0) 10400004 (      10)                                                                                
+         66B  10400005 (       0) 10400005 (      10)                                                                                
+         67B  10400006 (       0) 10400006 (      10)                                                                                
+         68B  10400007 (       0) 10400007 (      10)                                                                                
+         69B  10400008 (       0) 10400008 (      10)                                                                                
+         70B  10400009 (       0) 10400009 (      10)                                                                                
+         71B  10400010 (       0) 10400010 (      10)                                                                                
+         72B  10400011 (       0) 10400011 (      10)                                                                                
+         73B  10400012 (       0) 10400012 (      10)                                                                                
+         74B  10400013 (       0) 10400013 (      10)                                                                                
+         75B  10400014 (       0) 10400014 (      10)                                                                                
+         76B  10400015 (       0) 10400015 (      10)                                                                                
+         77B  10400016 (       0) 10400016 (      10)                                                                                
+         78B  10400017 (       0) 10400017 (      10)                                                                                
+         79B  10400018 (       0) 10400018 (      10)                                                                                
+         80B  10400019 (       0) 10400019 (      10)                                                                                
+         81B  10400020 (       0) 10400020 (      10)                                                                                
+         82B  10400021 (       0) 10400021 (      10)                                                                                
+         83B  10400022 (       0) 10400022 (      10)                                                                                
+         84B  10400023 (       0) 10400023 (      10)                                                                                
+         85B  10400024 (       0) 10400024 (      10)                                                                                
+         86B  10400025 (       0) 10400025 (      10)                                                                                
+         87B  10400026 (       0) 10400026 (      10)                                                                                
+         88B  10400027 (       0) 10400027 (      10)                                                                                
+         89B  10400028 (       0) 10400028 (      10)                                                                                
+         90B  10400029 (       0) 10400029 (      10)                                                                                
+         91B  10400030 (       0) 10400030 (      10)                                                                                
+         92B  10400031 (       0) 10400031 (      10)                                                                                
+         93B  10400032 (       0) 10400032 (      10)                                                                                
+         94B  10400033 (       0) 10400033 (      10)                                                                                
+         95B  10400034 (       0) 10400034 (      10)                                                                                
+         96B  10400035 (       0) 10400035 (      10)                                                                                
+         97B  10400036 (       0) 10400036 (      10)                                                                                
+         98B  10400037 (       0) 10400037 (      10)                                                                                
+         99B  10400038 (       0) 10400038 (      10)                                                                                
+        100B  10400039 (       0) 10400039 (      10)                                                                                
+        101B  10400040 (       0) 10400040 (      10)                                                                                
+        102B  10400041 (       0) 10400041 (      10)                                                                                
+        103B  10400042 (       0) 10400042 (      10)                                                                                
+        104B  10400043 (       0) 10400043 (      10)                                                                                
+        105B  10400044 (       0) 10400044 (      10)                                                                                
+        106B  10400045 (       0) 10400045 (      10)                                                                                
+        107B  10400046 (       0) 10400046 (      10)                                                                                
+        108B  10400047 (       0) 10400047 (      10)                                                                                
+        109B  10400048 (       0) 10400048 (      10)                                                                                
+        110B  10400049 (       0) 10400049 (      10)                                                                                
+        111B  10400050 (       0) 10400050 (      10)                                                                                
+        112B  10400051 (       0) 10400051 (      10)                                                                                
+        113B  10400052 (       0) 10400052 (      10)                                                                                
+        114B  10400053 (       0) 10400053 (      10)                                                                                
+        115B  10400054 (       0) 10400054 (      10)                                                                                
+        116B  10400055 (       0) 10400055 (      10)                                                                                
+        117B  10400056 (       0) 10400056 (      10)                                                                                
+        118B  10400057 (       0) 10400057 (      10)                                                                                
+        119B  10400058 (       0) 10400058 (      10)                                                                                
+        120B  10400059 (       0) 10400059 (      10)                                                                                
+        121B  10400060 (       0) 10400060 (      10)                                                                                
+        122B  10400061 (       0) 10400061 (      10)                                                                                
+        123B  10400062 (       0) 10400062 (      10)                                                                                
+        124B  10400063 (       0) 10400063 (      10)                                                                                
+        125B  10400064 (       0) 10400064 (      10)                                                                                
+        126B  10400065 (       0) 10400065 (      10)                                                                                
+        127B  10400066 (       0) 10400066 (      10)                                                                                
+        128B  10400067 (       0) 10400067 (      10)                                                                                
+        129B  10400068 (       0) 10400068 (      10)                                                                                
+        130B  10400069 (       0) 10400069 (      10)                                                                                
+        131B  10400070 (       0) 10400070 (      10)                                                                                
+        132B  10400071 (       0) 10400071 (      10)                                                                                
+        133B  10400072 (       0) 10400072 (      10)                                                                                
+        134B  10400073 (       0) 10400073 (      10)                                                                                
+        135B  10400074 (       0) 10400074 (      10)                                                                                
+        136B  10400075 (       0) 10400075 (      10)                                                                                
+        137B  10400076 (       0) 10400076 (      10)                                                                                
+        138B  10400077 (       0) 10400077 (      10)                                                                                
+        139B  10400078 (       0) 10400078 (      10)                                                                                
+        140B  10400079 (       0) 10400079 (      10)                                                                                
+        141B  10400080 (       0) 10400080 (      10)                                                                                
+        142B  10400081 (       0) 10400081 (      10)                                                                                
+        143B  10400082 (       0) 10400082 (      10)                                                                                
+        144B  10400083 (       0) 10400083 (      10)                                                                                
+        145B  10400084 (       0) 10400084 (      10)                                                                                
+        146B  10400085 (       0) 10400085 (      10)                                                                                
+        147B  10400086 (       0) 10400086 (      10)                                                                                
+        148B  10400087 (       0) 10400087 (      10)                                                                                
+        149B  10400088 (       0) 10400088 (      10)                                                                                
+        150B  10400089 (       0) 10400089 (      10)                                                                                
+        151B  10400090 (       0) 10400090 (      10)                                                                                
+        152B  10400091 (       0) 10400091 (      10)                                                                                
+        153B  10400092 (       0) 10400092 (      10)                                                                                
+        154B  10400093 (       0) 10400093 (      10)                                                                                
+        155B  10400094 (       0) 10400094 (      10)                                                                                
+        156B  10400095 (       0) 10400095 (      10)                                                                                
+        157B  10400096 (       0) 10400096 (      10)                                                                                
+        158B  10400097 (       0) 10400097 (      10)                                                                                
+        159B  10400098 (       0) 10400098 (      10)                                                                                
+        160B  10400099 (       0) 10400099 (      10)                                                                                
+        161B  10400100 (       0) 10400100 (      10)                                                                                
+        162B  10400101 (       0) 10400101 (      10)                                                                                
+        163B  10400102 (       0) 10400102 (      10)                                                                                
+        164B  10400103 (       0) 10400103 (      10)                                                                                
+        165B  10400104 (       0) 10400104 (      10)                                                                                
+        166B  10400105 (       0) 10400105 (      10)                                                                                
+        167B  10400106 (       0) 10400106 (      10)                                                                                
+        168B  10400107 (       0) 10400107 (      10)                                                                                
+        169B  10400108 (       0) 10400108 (      10)                                                                                
+        170B  10400109 (       0) 10400109 (      10)                                                                                
+        171B  10400110 (       0) 10400110 (      10)                                                                                
+        172B  10400111 (       0) 10400111 (      10)                                                                                
+        173B  10400112 (       0) 10400112 (      10)                                                                                
+        174B  10400113 (       0) 10400113 (      10)                                                                                
+        175B  10400114 (       0) 10400114 (      10)                                                                                
+        176B  10400115 (       0) 10400115 (      10)                                                                                
+        177B  10400116 (       0) 10400116 (      10)                                                                                
+        178B  10400117 (       0) 10400117 (      10)                                                                                
+        179B  10400118 (       0) 10400118 (      10)                                                                                
+        180B  10400119 (       0) 10400119 (      10)                                                                                
+        181B  10400120 (       0) 10400120 (      10)                                                                                
+        182B  10400121 (       0) 10400121 (      10)                                                                                
+        183B  10400122 (       0) 10400122 (      10)                                                                                
+        184B  10400123 (       0) 10400123 (      10)                                                                                
+        185B  10400124 (       0) 10400124 (      10)                                                                                
+        186B  10400125 (       0) 10400125 (      10)                                                                                
+        187B  10400126 (       0) 10400126 (      10)                                                                                
+        188B  10400127 (       0) 10400127 (      10)                                                                                
+        189B  10400128 (       0) 10400128 (      10)                                                                                
+        190B  10400129 (       0) 10400129 (      10)                                                                                
+        191B  10400130 (       0) 10400130 (      10)                                                                                
+        192B  10400131 (       0) 10400131 (      10)                                                                                
+        193B  10400132 (       0) 10400132 (      10)                                                                                
+        194B  10400133 (       0) 10400133 (      10)                                                                                
+        195B  10400134 (       0) 10400134 (      10)                                                                                
+        196B  10400135 (       0) 10400135 (      10)                                                                                
+        197B  10400136 (       0) 10400136 (      10)                                                                                
+        198B  10400137 (       0) 10400137 (      10)                                                                                
+        199B  10400138 (       0) 10400138 (      10)                                                                                
+        200B  10400139 (       0) 10400139 (      10)                                                                                
+        201B  10400140 (       0) 10400140 (      10)                                                                                
+        202B  10400141 (       0) 10400141 (      10)                                                                                
+        203B  10400142 (       0) 10400142 (      10)                                                                                
+        204B  10400143 (       0) 10400143 (      10)                                                                                
+        205B  10400144 (       0) 10400144 (      10)                                                                                
+        206B  10400145 (       0) 10400145 (      10)                                                                                
+        207B  10400146 (       0) 10400146 (      10)                                                                                
+        208B  10400147 (       0) 10400147 (      10)                                                                                
+        209B  10400148 (       0) 10400148 (      10)                                                                                
+        210B  10400149 (       0) 10400149 (      10)                                                                                
+        211B  10400150 (       0) 10400150 (      10)                                                                                
+        212B  10400151 (       0) 10400151 (      10)                                                                                
+        213B  10400152 (       0) 10400152 (      10)                                                                                
+        214B  10400153 (       0) 10400153 (      10)                                                                                
+        215B  10400154 (       0) 10400154 (      10)                                                                                
+        216B  10400155 (       0) 10400155 (      10)                                                                                
+        217B  10400156 (       0) 10400156 (      10)                                                                                
+        218B  10400157 (       0) 10400157 (      10)                                                                                
+        219B  10400158 (       0) 10400158 (      10)                                                                                
+        220B  10400159 (       0) 10400159 (      10)                                                                                
+        221B  10400160 (       0) 10400160 (      10)                                                                                
+        222B  10400161 (       0) 10400161 (      10)                                                                                
+        223B  10400162 (       0) 10400162 (      10)                                                                                
+        224B  10400163 (       0) 10400163 (      10)                                                                                
+        225B  10400164 (       0) 10400164 (      10)                                                                                
+        226B  10400165 (       0) 10400165 (      10)                                                                                
+        227B  10400166 (       0) 10400166 (      10)                                                                                
+        228B  10400167 (       0) 10400167 (      10)                                                                                
+        229B  10400168 (       0) 10400168 (      10)                                                                                
+        230B  10400169 (       0) 10400169 (      10)                                                                                
+        231B  10400170 (       0) 10400170 (      10)                                                                                
+        232B  10400171 (       0) 10400171 (      10)                                                                                
+        233B  10400172 (       0) 10400172 (      10)                                                                                
+        234B  10400173 (       0) 10400173 (      10)                                                                                
+        235B  10400174 (       0) 10400174 (      10)                                                                                
+        236B  10400175 (       0) 10400175 (      10)                                                                                
+        237B  10400176 (       0) 10400176 (      10)                                                                                
+        238B  10400177 (       0) 10400177 (      10)                                                                                
+        239B  10400178 (       0) 10400178 (      10)                                                                                
+        240B  10400179 (       0) 10400179 (      10)                                                                                
+        241B  10400180 (       0) 10400180 (      10)                                                                                
+        242B  10400181 (       0) 10400181 (      10)                                                                                
+        243B  10400182 (       0) 10400182 (      10)                                                                                
+        244B  10400183 (       0) 10400183 (      10)                                                                                
+        245B  10400184 (       0) 10400184 (      10)                                                                                
+        246B  10400185 (       0) 10400185 (      10)                                                                                
+        247B  10400186 (       0) 10400186 (      10)                                                                                
+        248B  10400187 (       0) 10400187 (      10)                                                                                
+        249B  10400188 (       0) 10400188 (      10)                                                                                
+        250B  10400189 (       0) 10400189 (      10)                                                                                
+        251B  10400190 (       0) 10400190 (      10)                                                                                
+        252B  10400191 (       0) 10400191 (      10)                                                                                
+        253B  10400192 (       0) 10400192 (      10)                                                                                
+        254B  10400193 (       0) 10400193 (      10)                                                                                
+        255B  10400194 (       0) 10400194 (      10)                                                                                
+        256B  10400195 (       0) 10400195 (      10)                                                                                
+        257B  10400196 (       0) 10400196 (      10)                                                                                
+        258B  10400197 (       0) 10400197 (      10)                                                                                
+        259B  10400198 (       0) 10400198 (      10)                                                                                
+        260B  10400199 (       0) 10400199 (      10)                                                                                
+        261B  10400200 (       0) 10400200 (      10)                                                                                
+        262B  10400201 (       0) 10400201 (      10)                                                                                
+        263B  10400202 (       0) 10400202 (      10)                                                                                
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE     8
+                                                                                                                                    
+0                                                                                                                                   
+0                      POINT/SUPERELEMENT CONNECTIVITY LIST (SORTED BY POINT ID  - "B" INDICATES BOUNDARY SEQUENCE ID)               
+0                             INTERIOR TO
+   POINT ID            TYPE  SUPERELEMEMT ------------------------------- CONNECTED TO SUPERELEMENT -------------------------------
+
+         1B                          0          10                                                                                   
+         2B                          0          10                                                                                   
+         3B                          0          10                                                                                   
+         4B                          0          10                                                                                   
+         5B                          0          10                                                                                   
+         6B                          0          10                                                                                   
+         7B                          0          10                                                                                   
+         8B                          0          10                                                                                   
+         9B                          0          10                                                                                   
+        10B                          0          10                                                                                   
+        11B                          0          10                                                                                   
+        12B                          0          10                                                                                   
+        13B                          0          10                                                                                   
+        14B                          0          10                                                                                   
+        15B                          0          10                                                                                   
+        16B                          0          10                                                                                   
+        17B                          0          10                                                                                   
+        18B                          0          10                                                                                   
+        19B                          0          10                                                                                   
+        20B                          0          10                                                                                   
+        21B                          0          10                                                                                   
+        22B                          0          10                                                                                   
+        23B                          0          10                                                                                   
+        24B                          0          10                                                                                   
+        25B                          0          10                                                                                   
+        26B                          0          10                                                                                   
+        27B                          0          10                                                                                   
+        28B                          0          10                                                                                   
+        29B                          0          10                                                                                   
+        30B                          0          10                                                                                   
+        31B                          0          10                                                                                   
+        32B                          0          10                                                                                   
+        33B                          0          10                                                                                   
+        34B                          0          10                                                                                   
+        35B                          0          10                                                                                   
+        36B                          0          10                                                                                   
+        37B                          0          10                                                                                   
+        38B                          0          10                                                                                   
+        39B                          0          10                                                                                   
+        40B                          0          10                                                                                   
+        41B                          0          10                                                                                   
+        42B                          0          10                                                                                   
+        43B                          0          10                                                                                   
+        44B                          0          10                                                                                   
+        45B                          0          10                                                                                   
+        46B                          0          10                                                                                   
+        47B                          0          10                                                                                   
+        48B                          0          10                                                                                   
+        49B                          0          10                                                                                   
+        50B                          0          10                                                                                   
+        51B                          0          10                                                                                   
+        52B                          0          10                                                                                   
+        53B                          0          10                                                                                   
+        54B                          0          10                                                                                   
+        55B                          0          10                                                                                   
+        56B                          0          10                                                                                   
+        57B                          0          10                                                                                   
+        58B                          0          10                                                                                   
+        59B                          0          10                                                                                   
+        60B                          0          10                                                                                   
+        61B                          0          10                                                                                   
+        62B             S            0          10                                                                                   
+        63B             S            0          10                                                                                   
+        64B             S            0          10                                                                                   
+        65B             S            0          10                                                                                   
+        66B             S            0          10                                                                                   
+        67B             S            0          10                                                                                   
+        68B             S            0          10                                                                                   
+        69B             S            0          10                                                                                   
+        70B             S            0          10                                                                                   
+        71B             S            0          10                                                                                   
+        72B             S            0          10                                                                                   
+        73B             S            0          10                                                                                   
+        74B             S            0          10                                                                                   
+        75B             S            0          10                                                                                   
+        76B             S            0          10                                                                                   
+        77B             S            0          10                                                                                   
+        78B             S            0          10                                                                                   
+        79B             S            0          10                                                                                   
+        80B             S            0          10                                                                                   
+        81B             S            0          10                                                                                   
+        82B             S            0          10                                                                                   
+        83B             S            0          10                                                                                   
+        84B             S            0          10                                                                                   
+        85B             S            0          10                                                                                   
+        86B             S            0          10                                                                                   
+        87B             S            0          10                                                                                   
+        88B             S            0          10                                                                                   
+        89B             S            0          10                                                                                   
+        90B             S            0          10                                                                                   
+        91B             S            0          10                                                                                   
+        92B             S            0          10                                                                                   
+        93B             S            0          10                                                                                   
+        94B             S            0          10                                                                                   
+        95B             S            0          10                                                                                   
+        96B             S            0          10                                                                                   
+        97B             S            0          10                                                                                   
+        98B             S            0          10                                                                                   
+        99B             S            0          10                                                                                   
+       100B             S            0          10                                                                                   
+       101B             S            0          10                                                                                   
+       102B             S            0          10                                                                                   
+       103B             S            0          10                                                                                   
+       104B             S            0          10                                                                                   
+       105B             S            0          10                                                                                   
+       106B             S            0          10                                                                                   
+       107B             S            0          10                                                                                   
+       108B             S            0          10                                                                                   
+       109B             S            0          10                                                                                   
+       110B             S            0          10                                                                                   
+       111B             S            0          10                                                                                   
+       112B             S            0          10                                                                                   
+       113B             S            0          10                                                                                   
+       114B             S            0          10                                                                                   
+       115B             S            0          10                                                                                   
+       116B             S            0          10                                                                                   
+       117B             S            0          10                                                                                   
+       118B             S            0          10                                                                                   
+       119B             S            0          10                                                                                   
+       120B             S            0          10                                                                                   
+       121B             S            0          10                                                                                   
+       122B             S            0          10                                                                                   
+       123B             S            0          10                                                                                   
+       124B             S            0          10                                                                                   
+       125B             S            0          10                                                                                   
+       126B             S            0          10                                                                                   
+       127B             S            0          10                                                                                   
+       128B             S            0          10                                                                                   
+       129B             S            0          10                                                                                   
+       130B             S            0          10                                                                                   
+       131B             S            0          10                                                                                   
+       132B             S            0          10                                                                                   
+       133B             S            0          10                                                                                   
+       134B             S            0          10                                                                                   
+       135B             S            0          10                                                                                   
+       136B             S            0          10                                                                                   
+       137B             S            0          10                                                                                   
+       138B             S            0          10                                                                                   
+       139B             S            0          10                                                                                   
+       140B             S            0          10                                                                                   
+       141B             S            0          10                                                                                   
+       142B             S            0          10                                                                                   
+       143B             S            0          10                                                                                   
+       144B             S            0          10                                                                                   
+       145B             S            0          10                                                                                   
+       146B             S            0          10                                                                                   
+       147B             S            0          10                                                                                   
+       148B             S            0          10                                                                                   
+       149B             S            0          10                                                                                   
+       150B             S            0          10                                                                                   
+       151B             S            0          10                                                                                   
+       152B             S            0          10                                                                                   
+       153B             S            0          10                                                                                   
+       154B             S            0          10                                                                                   
+       155B             S            0          10                                                                                   
+       156B             S            0          10                                                                                   
+       157B             S            0          10                                                                                   
+       158B             S            0          10                                                                                   
+       159B             S            0          10                                                                                   
+       160B             S            0          10                                                                                   
+       161B             S            0          10                                                                                   
+       162B             S            0          10                                                                                   
+       163B             S            0          10                                                                                   
+       164B             S            0          10                                                                                   
+       165B             S            0          10                                                                                   
+       166B             S            0          10                                                                                   
+       167B             S            0          10                                                                                   
+       168B             S            0          10                                                                                   
+       169B             S            0          10                                                                                   
+       170B             S            0          10                                                                                   
+       171B             S            0          10                                                                                   
+       172B             S            0          10                                                                                   
+       173B             S            0          10                                                                                   
+       174B             S            0          10                                                                                   
+       175B             S            0          10                                                                                   
+       176B             S            0          10                                                                                   
+       177B             S            0          10                                                                                   
+       178B             S            0          10                                                                                   
+       179B             S            0          10                                                                                   
+       180B             S            0          10                                                                                   
+       181B             S            0          10                                                                                   
+       182B             S            0          10                                                                                   
+       183B             S            0          10                                                                                   
+       184B             S            0          10                                                                                   
+       185B             S            0          10                                                                                   
+       186B             S            0          10                                                                                   
+       187B             S            0          10                                                                                   
+       188B             S            0          10                                                                                   
+       189B             S            0          10                                                                                   
+       190B             S            0          10                                                                                   
+       191B             S            0          10                                                                                   
+       192B             S            0          10                                                                                   
+       193B             S            0          10                                                                                   
+       194B             S            0          10                                                                                   
+       195B             S            0          10                                                                                   
+       196B             S            0          10                                                                                   
+       197B             S            0          10                                                                                   
+       198B             S            0          10                                                                                   
+       199B             S            0          10                                                                                   
+       200B             S            0          10                                                                                   
+       201B             S            0          10                                                                                   
+       202B             S            0          10                                                                                   
+       203B             S            0          10                                                                                   
+       204B             S            0          10                                                                                   
+       205B             S            0          10                                                                                   
+       206B             S            0          10                                                                                   
+       207B             S            0          10                                                                                   
+       208B             S            0          10                                                                                   
+       209B             S            0          10                                                                                   
+       210B             S            0          10                                                                                   
+       211B             S            0          10                                                                                   
+       212B             S            0          10                                                                                   
+       213B             S            0          10                                                                                   
+       214B             S            0          10                                                                                   
+       215B             S            0          10                                                                                   
+       216B             S            0          10                                                                                   
+       217B             S            0          10                                                                                   
+       218B             S            0          10                                                                                   
+       219B             S            0          10                                                                                   
+       220B             S            0          10                                                                                   
+       221B             S            0          10                                                                                   
+       222B             S            0          10                                                                                   
+       223B             S            0          10                                                                                   
+       224B             S            0          10                                                                                   
+       225B             S            0          10                                                                                   
+       226B             S            0          10                                                                                   
+       227B             S            0          10                                                                                   
+       228B             S            0          10                                                                                   
+       229B             S            0          10                                                                                   
+       230B             S            0          10                                                                                   
+       231B             S            0          10                                                                                   
+       232B             S            0          10                                                                                   
+       233B             S            0          10                                                                                   
+       234B             S            0          10                                                                                   
+       235B             S            0          10                                                                                   
+       236B             S            0          10                                                                                   
+       237B             S            0          10                                                                                   
+       238B             S            0          10                                                                                   
+       239B             S            0          10                                                                                   
+       240B             S            0          10                                                                                   
+       241B             S            0          10                                                                                   
+       242B             S            0          10                                                                                   
+       243B             S            0          10                                                                                   
+       244B             S            0          10                                                                                   
+       245B             S            0          10                                                                                   
+       246B             S            0          10                                                                                   
+       247B             S            0          10                                                                                   
+       248B             S            0          10                                                                                   
+       249B             S            0          10                                                                                   
+       250B             S            0          10                                                                                   
+       251B             S            0          10                                                                                   
+       252B             S            0          10                                                                                   
+       253B             S            0          10                                                                                   
+       254B             S            0          10                                                                                   
+       255B             S            0          10                                                                                   
+       256B             S            0          10                                                                                   
+       257B             S            0          10                                                                                   
+       258B             S            0          10                                                                                   
+       259B             S            0          10                                                                                   
+       260B             S            0          10                                                                                   
+       261B             S            0          10                                                                                   
+       262B             S            0          10                                                                                   
+       263B             S            0          10                                                                                   
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE     9
+                                                                                                                                    
+0                                                                                                                                   
+0                      POINT/SUPERELEMENT CONNECTIVITY LIST (SORTED BY FIRST POINT ID - "B" INDICATES BOUNDARY SEQUENCE ID)          
+0             FIRST           INTERIOR TO
+     COUNT   POINT ID  TYPE  SUPERELEMEMT ------------------------------- CONNECTED TO SUPERELEMENT -------------------------------
+
+       263          1B               0          10                                                                                   
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    10
+                                                                                                                                    
+0                                                                                                                                   
+0                      POINT/SUPERELEMENT CONNECTIVITY LIST (SORTED BY COUNT - "B" INDICATES BOUNDARY SEQUENCE ID)                   
+0             FIRST           INTERIOR TO
+     COUNT   POINT ID  TYPE  SUPERELEMEMT ------------------------------- CONNECTED TO SUPERELEMENT -------------------------------
+
+       263          1B               0          10                                                                                   
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    11
+                                                                                                                                    
+0                                                                                                                                   
+0                      POINT/SUPERELEMENT CONNECTIVITY LIST (SORTED BY INTERIOR SUPERELEMENT - "B" INDICATES BOUNDARY SEQUENCE ID)   
+0             FIRST           INTERIOR TO
+     COUNT   POINT ID  TYPE  SUPERELEMEMT ------------------------------- CONNECTED TO SUPERELEMENT -------------------------------
+
+       263          1B               0          10                                                                                   
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    12
+                                                                                                                                    
+0                                                                                                                                   
+
+0                                             SUPERELEMENT        0
+         TYPE = RESIDUAL STRUCTURE                                                                                                   
+                                              LIST OF  INTERIOR POINTS           ( TOTAL NO. OF INTERIOR POINT =       263 )         
+     INDEX          -1-         -2-         -3-         -4-         -5-         -6-         -7-         -8-         -9-        -10-
+        1            1B          2B          3B          4B          5B          6B          7B          8B          9B         10B  
+       11           11B         12B         13B         14B         15B         16B         17B         18B         19B         20B  
+       21           21B         22B         23B         24B         25B         26B         27B         28B         29B         30B  
+       31           31B         32B         33B         34B         35B         36B         37B         38B         39B         40B  
+       41           41B         42B         43B         44B         45B         46B         47B         48B         49B         50B  
+       51           51B         52B         53B         54B         55B         56B         57B         58B         59B         60B  
+       61           61B         62B         63B         64B         65B         66B         67B         68B         69B         70B  
+       71           71B         72B         73B         74B         75B         76B         77B         78B         79B         80B  
+       81           81B         82B         83B         84B         85B         86B         87B         88B         89B         90B  
+       91           91B         92B         93B         94B         95B         96B         97B         98B         99B        100B  
+      101          101B        102B        103B        104B        105B        106B        107B        108B        109B        110B  
+      111          111B        112B        113B        114B        115B        116B        117B        118B        119B        120B  
+      121          121B        122B        123B        124B        125B        126B        127B        128B        129B        130B  
+      131          131B        132B        133B        134B        135B        136B        137B        138B        139B        140B  
+      141          141B        142B        143B        144B        145B        146B        147B        148B        149B        150B  
+      151          151B        152B        153B        154B        155B        156B        157B        158B        159B        160B  
+      161          161B        162B        163B        164B        165B        166B        167B        168B        169B        170B  
+      171          171B        172B        173B        174B        175B        176B        177B        178B        179B        180B  
+      181          181B        182B        183B        184B        185B        186B        187B        188B        189B        190B  
+      191          191B        192B        193B        194B        195B        196B        197B        198B        199B        200B  
+      201          201B        202B        203B        204B        205B        206B        207B        208B        209B        210B  
+      211          211B        212B        213B        214B        215B        216B        217B        218B        219B        220B  
+      221          221B        222B        223B        224B        225B        226B        227B        228B        229B        230B  
+      231          231B        232B        233B        234B        235B        236B        237B        238B        239B        240B  
+      241          241B        242B        243B        244B        245B        246B        247B        248B        249B        250B  
+      251          251B        252B        253B        254B        255B        256B        257B        258B        259B        260B  
+      261          261B        262B        263B                                                                                      
+
+0                                             SUPERELEMENT        0
+         TYPE = RESIDUAL STRUCTURE                                                                                                   
+                                              LIST OF  ELEMENTS                  ( TOTAL NO. OF ELEMENTS       =        45 )         
+     INDEX          -1-         -2-         -3-         -4-         -5-         -6-         -7-         -8-         -9-        -10-
+        1             1         100         101         102         103         104         105         106         107         108  
+       11           109         110         111         112         113         114         115         116         117         118  
+       21           119         120         121         122         123         124         125         126         127         128  
+       31           129     4000000     4000001     4000011     4000012     4000015     4000017     4000019     4000020     4000024  
+       41       4000027     4000029     4000031     4000032     4000033                                                              
+
+0                                             SUPERELEMENT       10
+         TYPE = PRIMARY (BEGIN SUPER)                                                                                                
+                                              LIST OF  EXTERIOR POINTS           ( TOTAL NO. OF EXTERIOR POINT =       263 )         
+     INDEX          -1-         -2-         -3-         -4-         -5-         -6-         -7-         -8-         -9-        -10-
+        1            1B          2B          3B          4B          5B          6B          7B          8B          9B         10B  
+       11           11B         12B         13B         14B         15B         16B         17B         18B         19B         20B  
+       21           21B         22B         23B         24B         25B         26B         27B         28B         29B         30B  
+       31           31B         32B         33B         34B         35B         36B         37B         38B         39B         40B  
+       41           41B         42B         43B         44B         45B         46B         47B         48B         49B         50B  
+       51           51B         52B         53B         54B         55B         56B         57B         58B         59B         60B  
+       61           61B         62B         63B         64B         65B         66B         67B         68B         69B         70B  
+       71           71B         72B         73B         74B         75B         76B         77B         78B         79B         80B  
+       81           81B         82B         83B         84B         85B         86B         87B         88B         89B         90B  
+       91           91B         92B         93B         94B         95B         96B         97B         98B         99B        100B  
+      101          101B        102B        103B        104B        105B        106B        107B        108B        109B        110B  
+      111          111B        112B        113B        114B        115B        116B        117B        118B        119B        120B  
+      121          121B        122B        123B        124B        125B        126B        127B        128B        129B        130B  
+      131          131B        132B        133B        134B        135B        136B        137B        138B        139B        140B  
+      141          141B        142B        143B        144B        145B        146B        147B        148B        149B        150B  
+      151          151B        152B        153B        154B        155B        156B        157B        158B        159B        160B  
+      161          161B        162B        163B        164B        165B        166B        167B        168B        169B        170B  
+      171          171B        172B        173B        174B        175B        176B        177B        178B        179B        180B  
+      181          181B        182B        183B        184B        185B        186B        187B        188B        189B        190B  
+      191          191B        192B        193B        194B        195B        196B        197B        198B        199B        200B  
+      201          201B        202B        203B        204B        205B        206B        207B        208B        209B        210B  
+      211          211B        212B        213B        214B        215B        216B        217B        218B        219B        220B  
+      221          221B        222B        223B        224B        225B        226B        227B        228B        229B        230B  
+      231          231B        232B        233B        234B        235B        236B        237B        238B        239B        240B  
+      241          241B        242B        243B        244B        245B        246B        247B        248B        249B        250B  
+      251          251B        252B        253B        254B        255B        256B        257B        258B        259B        260B  
+      261          261B        262B        263B                                                                                      
+ ^^^ USER INFORMATION MESSAGE 9044 (PHASE0)  
+ ^^^ BULK DATA AND CASE CONTROL PARTITIONING,    RESTART CHECKING, AND UNDEFORMED PLOTTING IS    
+ ^^^ INITIATED FOR SUPERELEMENT         10 
+ ^^^ USER INFORMATION MESSAGE 9044 (PHASE0)  
+ ^^^ BULK DATA AND CASE CONTROL PARTITIONING,    RESTART CHECKING, AND UNDEFORMED PLOTTING IS    
+ ^^^ INITIATED FOR SUPERELEMENT          0 
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    13
+                                                                                                        SUPERELEMENT 10             
+0                                                                                                                                   
+ *** USER INFORMATION MESSAGE 7325 (SEP2DR)
+     PROCESSING OF SUPERELEMENT       10 IS NOW INITIATED.
+ ^^^ USER INFORMATION MESSAGE 9045 (PHASE1DR)    
+ ^^^ PHASE 1 - SUPERELEMENT GENERATION, ASSEMBLY AND REDUCTION.  
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    14
+                                                                                                        SUPERELEMENT 10             
+0                                                                                                                                   
+0                                                                                                                                   
+                                                                                                                                    
+                                                                                                                                    
+ *** USER INFORMATION MESSAGE 7570 (GPWG1S)
+     RESULTS OF RIGID BODY CHECKS OF MATRIX KGG      (G-SET)  FOLLOW:
+     PRINT RESULTS IN ALL SIX DIRECTIONS AGAINST THE LIMIT OF   8.953459E-02
+           DIRECTION        STRAIN ENERGY        PASS/FAIL
+           ---------        -------------        ---------
+             1               2.171180E-04          PASS
+             2               1.623329E-04          PASS
+             3               1.647606E-04          PASS
+             4               4.560818E-02          PASS
+             5               4.933616E-02          PASS
+             6               3.018612E-02          PASS
+     SOME POSSIBLE REASONS MAY LEAD TO THE FAILURE:
+       1. CELASI ELEMENTS CONNECTING TO ONLY ONE GRID POINT;
+       2. CELASI ELEMENTS CONNECTING TO NON-COINCIDENT POINTS;
+       3. CELASI ELEMENTS CONNECTING TO NON-COLLINEAR DOF;
+       4. IMPROPERLY DEFINED DMIG MATRICES;
+ 
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    15
+                                                                                                        SUPERELEMENT 10             
+0                                                                                                                                   
+ *** USER INFORMATION MESSAGE 7310 (VECPRN)
+     ORIGIN OF SUPERELEMENT BASIC COORDINATE SYSTEM WILL BE USED AS REFERENCE LOCATION.
+     RESULTANTS ABOUT ORIGIN OF SUPERELEMENT BASIC COORDINATE SYSTEM IN SUPERELEMENT BASIC SYSTEM COORDINATES.
+0                                                  OLOAD    RESULTANT       
+  SUBCASE/    LOAD
+  DAREA ID    TYPE       T1            T2            T3            R1            R2            R3
+0        1     FX    0.000000E+00     ----          ----          ----       0.000000E+00  0.000000E+00                             
+               FY       ----       0.000000E+00     ----       0.000000E+00     ----       0.000000E+00                             
+               FZ       ----          ----       0.000000E+00  0.000000E+00  0.000000E+00     ----                                  
+               MX       ----          ----          ----       0.000000E+00     ----          ----                                  
+               MY       ----          ----          ----          ----       0.000000E+00     ----                                  
+               MZ       ----          ----          ----          ----          ----       0.000000E+00                             
+             TOTALS  0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00                             
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    16
+                                                                                                        SUPERELEMENT 10             
+0                                                                                                            SUBCASE 1              
+0                                                                                                                                   
+                                                                                                                                    
+                                                                                                                                    
+ *** USER INFORMATION MESSAGE 7570 (GPWG1S)
+     RESULTS OF RIGID BODY CHECKS OF MATRIX KNN      (N-SET)  FOLLOW:
+     PRINT RESULTS IN ALL SIX DIRECTIONS AGAINST THE LIMIT OF   8.953459E-02
+           DIRECTION        STRAIN ENERGY        PASS/FAIL
+           ---------        -------------        ---------
+             1               2.171180E-04          PASS
+             2               1.623329E-04          PASS
+             3               1.647606E-04          PASS
+             4               4.560818E-02          PASS
+             5               4.933616E-02          PASS
+             6               3.018612E-02          PASS
+     SOME POSSIBLE REASONS MAY LEAD TO THE FAILURE:
+       1. MULTIPOINT CONSTRAINT EQUATIONS WHICH DO NOT SATISFY RIGID-BODY MOTION;
+       2. RBE3 ELEMENTS FOR WHICH THE INDEPENDENT DEGREE-OF-FREEDOM CANNOT DESCRIBE
+          ALL POSSIBLE RIGID-BODY MOTIONS.
+ 
+ *** USER INFORMATION MESSAGE - SINGULARITIES FOUND USING EIGENVALUE METHOD
+ ***       0 SINGULARITIES FOUND         0 SINGULARITIES ELIMINATED
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    17
+                                                                                                        SUPERELEMENT 10             
+0                                                                                                            SUBCASE 1              
+0                                                                                                                                   
+                                                                                                                                    
+                                                                                                                                    
+ *** USER INFORMATION MESSAGE 7570 (GPWG1S)
+     RESULTS OF RIGID BODY CHECKS OF MATRIX KFF      (F-SET)  FOLLOW:
+     PRINT RESULTS IN ALL SIX DIRECTIONS AGAINST THE LIMIT OF   8.953459E-02
+           DIRECTION        STRAIN ENERGY        PASS/FAIL
+           ---------        -------------        ---------
+             1               2.171180E-04          PASS
+             2               1.623329E-04          PASS
+             3               1.647606E-04          PASS
+             4               4.560818E-02          PASS
+             5               4.933616E-02          PASS
+             6               3.018612E-02          PASS
+     SOME POSSIBLE REASONS MAY LEAD TO THE FAILURE:
+       1. CONSTRAINTS WHICH PREVENT RIGID-BODY MOTION.
+ 
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    18
+                                                                                                        SUPERELEMENT 10             
+0                                                                                                            SUBCASE 1              
+0                                                                                                                                   
+                                                                                                                                    
+                                                                                                                                    
+ *** USER INFORMATION MESSAGE 7570 (GPWG1S)
+     RESULTS OF RIGID BODY CHECKS OF MATRIX KAA1     (A-SET)  FOLLOW:
+     PRINT RESULTS IN ALL SIX DIRECTIONS AGAINST THE LIMIT OF   8.953459E-02
+           DIRECTION        STRAIN ENERGY        PASS/FAIL
+           ---------        -------------        ---------
+             1               2.171180E-04          PASS
+             2               1.623329E-04          PASS
+             3               1.647606E-04          PASS
+             4               4.560818E-02          PASS
+             5               4.933616E-02          PASS
+             6               3.018612E-02          PASS
+     SOME POSSIBLE REASONS MAY LEAD TO THE FAILURE:
+     IF THE MODEL HAS PASSED THE PREVIOUS CHECKS FOR THE G-SET AND N-SET,
+     THEN:
+       1. THE MODEL IS NOT INTENDED TO BE FREE-FREE WHICH INDICATES THAT THE MODEL IS
+          PROPERLY CONSTRAINED TO GROUND;
+       2. THE REFERENCE GRID POINT (GRID=GID ON THE GROUNDCHECK COMMAND) IS LOCATED
+          TOO FAR FROM THE MODEL'S CENTER OF GRAVITY. IT IS RECOMMENDED THAT THE
+          REFERENCE GRID POINT BE LOCATED AS CLOSE AS POSSIBLE TO THE MODEL'S CENTER
+          OF GRAVITY OF THE MODEL (SEE THE GRID POINT WEIGHT GENERATOR OUTPUT);
+       3. PARAM,AUTOSPC,YES CONSTRAINS NEAR-SINGULAR DEGREES-OF-FREEDOM. WHEN A
+          FINITE ELEMENT MODEL WITH AUTOSPC FAILS THE A-SET CHECK, IT IS NOT EVIDENT
+          THAT GROUNDING HAS OCCURRED. THE USE OF PARAM,SNORM WILL NOT ELIMINATE THE
+          SPURIOUS FAILURE.
+ 
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    19
+                                                                                                        SUPERELEMENT 10             
+0                                                                                                            SUBCASE 1              
+                                           O U T P U T   F R O M   W E I G H T   C H E C K
+0                                                     DEGREES OF FREEDOM SET = G       
+0                                                     REFERENCE POINT =        0
+                                                                M O
+                      *  1.640346E-01 -1.782064E-13 -5.617246E-14 -3.195311E-11  8.662991E-01 -2.527850E-01 *
+                      * -1.782077E-13  1.640346E-01 -9.289171E-13 -8.662991E-01 -7.861167E-11  7.001213E-04 *
+                      * -5.617284E-14 -9.289189E-13  1.640346E-01  2.527850E-01 -7.001211E-04  3.352692E-11 *
+                      * -3.195309E-11 -8.662991E-01  2.527850E-01  8.878161E+00 -1.546194E-03 -4.815170E-03 *
+                      *  8.662991E-01 -7.861168E-11 -7.001211E-04 -1.546194E-03  1.416135E+01 -1.884661E+00 *
+                      * -2.527850E-01  7.001213E-04  3.352693E-11 -4.815170E-03 -1.884661E+00  1.147658E+01 *
+                                                                 S
+                                           *  1.000000E+00  0.000000E+00  0.000000E+00 *
+                                           *  0.000000E+00  1.000000E+00  0.000000E+00 *
+                                           *  0.000000E+00  0.000000E+00  1.000000E+00 *
+                               DIRECTION
+                          MASS AXIS SYSTEM (S)     MASS              X-C.G.        Y-C.G.        Z-C.G.
+                                  X            1.640346E-01     -1.947950E-10  1.541047E+00  5.281199E+00
+                                  Y            1.640346E-01      4.268133E-03 -4.792385E-10  5.281199E+00
+                                  Z            1.640346E-01      4.268132E-03  1.541047E+00  2.043894E-10
+                                                                I(S)
+                                           *  3.913510E+00  4.672739E-04  1.117690E-03 *
+                                           *  4.672739E-04  9.586252E+00  5.496534E-01 *
+                                           *  1.117690E-03  5.496534E-01  1.108702E+01 *
+                                                                I(Q)
+                                           *  9.406478E+00                             *
+                                           *                1.126680E+01               *
+                                           *                              3.913510E+00 *
+                                                                 Q
+                                           *  1.441064E-04  1.247135E-04  1.000000E+00 *
+                                           * -9.504545E-01  3.108638E-01  9.819762E-05 *
+                                           * -3.108638E-01 -9.504545E-01  1.633320E-04 *
+
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    20
+                                                                                                        SUPERELEMENT 10             
+0                                                                                                            SUBCASE 1              
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    21
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                                                   
+ *** USER INFORMATION MESSAGE 7325 (SEP2DR)
+     PROCESSING OF RESIDUAL STRUCTURE IS NOW INITIATED.
+ ^^^ USER INFORMATION MESSAGE 9045 (PHASE1DR)    
+ ^^^ PHASE 1 - SUPERELEMENT GENERATION, ASSEMBLY AND REDUCTION.  
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    22
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                                                   
+                                           O U T P U T   F R O M   W E I G H T   C H E C K
+0                                                     DEGREES OF FREEDOM SET = G       
+0                                                     REFERENCE POINT =        0
+                                                                M O
+                      *  3.038748E-01  1.066288E-25  5.745432E-26 -1.004409E-24  3.934241E+00  2.984762E-01 *
+                      *  1.066288E-25  3.038748E-01  1.016440E-20 -3.934241E+00  6.269215E-21  6.325682E-08 *
+                      *  5.745432E-26  1.016440E-20  3.038748E-01 -2.984762E-01 -6.325682E-08 -6.268210E-21 *
+                      * -1.004409E-24 -3.934241E+00 -2.984762E-01  5.577524E+01  8.113936E-08 -8.454061E-07 *
+                      *  3.934241E+00  6.269215E-21 -6.325682E-08  8.113936E-08  5.593389E+01  2.856847E+00 *
+                      *  2.984762E-01  6.325682E-08 -6.268210E-21 -8.454061E-07  2.856847E+00  7.024670E+00 *
+                                                                 S
+                                           *  1.000000E+00  0.000000E+00  0.000000E+00 *
+                                           *  0.000000E+00  1.000000E+00  0.000000E+00 *
+                                           *  0.000000E+00  0.000000E+00  1.000000E+00 *
+                               DIRECTION
+                          MASS AXIS SYSTEM (S)     MASS              X-C.G.        Y-C.G.        Z-C.G.
+                                  X            3.038748E-01     -3.305337E-24 -9.822340E-01  1.294691E+01
+                                  Y            3.038748E-01      2.081674E-07  2.063091E-20  1.294691E+01
+                                  Z            3.038748E-01      2.081674E-07 -9.822340E-01 -2.062761E-20
+                                                                I(S)
+                                           *  4.545789E+00 -1.900636E-08  2.642543E-08 *
+                                           * -1.900636E-08  4.997617E+00  1.007499E+00 *
+                                           *  2.642543E-08  1.007499E+00  6.731496E+00 *
+                                                                I(Q)
+                                           *  4.545789E+00                             *
+                                           *                7.193706E+00               *
+                                           *                              4.535407E+00 *
+                                                                 Q
+                                           *  1.000000E+00  0.000000E+00  0.000000E+00 *
+                                           *  0.000000E+00  4.169823E-01  9.089146E-01 *
+                                           *  0.000000E+00 -9.089146E-01  4.169823E-01 *
+
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    23
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                                                   
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK OGPWG    WRITTEN ON FORTRAN UNIT  12, TRL =
+                    101                 0                 0                 0                 0                 0                 1
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =      146 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       24 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =      254 WORDS.)
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    24
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                                                   
+0                                                                                                                                   
+                                                                                                                                    
+                                                                                                                                    
+ *** USER INFORMATION MESSAGE 7570 (GPWG1S)
+     RESULTS OF RIGID BODY CHECKS OF MATRIX KGG      (G-SET)  FOLLOW:
+     PRINT RESULTS IN ALL SIX DIRECTIONS AGAINST THE LIMIT OF   1.069440E-01
+           DIRECTION        STRAIN ENERGY        PASS/FAIL
+           ---------        -------------        ---------
+             1               2.172226E-04          PASS
+             2               1.623433E-04          PASS
+             3               1.646514E-04          PASS
+             4               4.561947E-02          PASS
+             5               4.934021E-02          PASS
+             6               3.014607E-02          PASS
+     SOME POSSIBLE REASONS MAY LEAD TO THE FAILURE:
+       1. CELASI ELEMENTS CONNECTING TO ONLY ONE GRID POINT;
+       2. CELASI ELEMENTS CONNECTING TO NON-COINCIDENT POINTS;
+       3. CELASI ELEMENTS CONNECTING TO NON-COLLINEAR DOF;
+       4. IMPROPERLY DEFINED DMIG MATRICES;
+ 
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    25
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                                                   
+0 RESULTANTS ABOUT ORIGIN OF SUPERELEMENT BASIC COORDINATE SYSTEM IN SUPERELEMENT BASIC SYSTEM COORDINATES.
+
+0                                                  OLOAD    RESULTANT       
+  SUBCASE/    LOAD
+  DAREA ID    TYPE       T1            T2            T3            R1            R2            R3
+0        2     FX    0.000000E+00     ----          ----          ----       0.000000E+00  0.000000E+00                             
+               FY       ----       0.000000E+00     ----       0.000000E+00     ----       0.000000E+00                             
+               FZ       ----          ----       0.000000E+00  0.000000E+00  0.000000E+00     ----                                  
+               MX       ----          ----          ----       0.000000E+00     ----          ----                                  
+               MY       ----          ----          ----          ----       0.000000E+00     ----                                  
+               MZ       ----          ----          ----          ----          ----       0.000000E+00                             
+             TOTALS  0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00                             
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    26
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                            SUBCASE 2              
+0                                                                                                                                   
+                                                                                                                                    
+                                                                                                                                    
+ *** USER INFORMATION MESSAGE 7570 (GPWG1S)
+     RESULTS OF RIGID BODY CHECKS OF MATRIX KNN      (N-SET)  FOLLOW:
+     PRINT RESULTS IN ALL SIX DIRECTIONS AGAINST THE LIMIT OF   9.851565E+01
+           DIRECTION        STRAIN ENERGY        PASS/FAIL
+           ---------        -------------        ---------
+             1               2.172841E-04          PASS
+             2               1.621675E-04          PASS
+             3               1.658884E-04          PASS
+             4               4.552524E-02          PASS
+             5               4.919022E-02          PASS
+             6               3.015718E-02          PASS
+     SOME POSSIBLE REASONS MAY LEAD TO THE FAILURE:
+       1. MULTIPOINT CONSTRAINT EQUATIONS WHICH DO NOT SATISFY RIGID-BODY MOTION;
+       2. RBE3 ELEMENTS FOR WHICH THE INDEPENDENT DEGREE-OF-FREEDOM CANNOT DESCRIBE
+          ALL POSSIBLE RIGID-BODY MOTIONS.
+ 
+ *** USER INFORMATION MESSAGE - SINGULARITIES FOUND USING EIGENVALUE METHOD
+ ***       0 SINGULARITIES FOUND         0 SINGULARITIES ELIMINATED
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    27
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                            SUBCASE 2              
+0                                                                                                                                   
+                                                                                                                                    
+                                                                                                                                    
+ *** USER INFORMATION MESSAGE 7570 (GPWG1S)
+     RESULTS OF RIGID BODY CHECKS OF MATRIX KFF      (F-SET)  FOLLOW:
+     PRINT RESULTS IN ALL SIX DIRECTIONS AGAINST THE LIMIT OF   9.851565E+01
+           DIRECTION        STRAIN ENERGY        PASS/FAIL
+           ---------        -------------        ---------
+             1               2.172841E-04          PASS
+             2               1.621675E-04          PASS
+             3               1.658884E-04          PASS
+             4               4.552524E-02          PASS
+             5               4.919022E-02          PASS
+             6               3.015718E-02          PASS
+     SOME POSSIBLE REASONS MAY LEAD TO THE FAILURE:
+       1. CONSTRAINTS WHICH PREVENT RIGID-BODY MOTION.
+ 
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    28
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                            SUBCASE 2              
+0                                                                                                                                   
+                                                                                                                                    
+                                                                                                                                    
+ *** USER INFORMATION MESSAGE 7570 (GPWG1S)
+     RESULTS OF RIGID BODY CHECKS OF MATRIX KAA1     (A-SET)  FOLLOW:
+     PRINT RESULTS IN ALL SIX DIRECTIONS AGAINST THE LIMIT OF   9.851565E+01
+           DIRECTION        STRAIN ENERGY        PASS/FAIL
+           ---------        -------------        ---------
+             1               2.172841E-04          PASS
+             2               1.621675E-04          PASS
+             3               1.658884E-04          PASS
+             4               4.552524E-02          PASS
+             5               4.919022E-02          PASS
+             6               3.015718E-02          PASS
+     SOME POSSIBLE REASONS MAY LEAD TO THE FAILURE:
+     IF THE MODEL HAS PASSED THE PREVIOUS CHECKS FOR THE G-SET AND N-SET,
+     THEN:
+       1. THE MODEL IS NOT INTENDED TO BE FREE-FREE WHICH INDICATES THAT THE MODEL IS
+          PROPERLY CONSTRAINED TO GROUND;
+       2. THE REFERENCE GRID POINT (GRID=GID ON THE GROUNDCHECK COMMAND) IS LOCATED
+          TOO FAR FROM THE MODEL'S CENTER OF GRAVITY. IT IS RECOMMENDED THAT THE
+          REFERENCE GRID POINT BE LOCATED AS CLOSE AS POSSIBLE TO THE MODEL'S CENTER
+          OF GRAVITY OF THE MODEL (SEE THE GRID POINT WEIGHT GENERATOR OUTPUT);
+       3. PARAM,AUTOSPC,YES CONSTRAINS NEAR-SINGULAR DEGREES-OF-FREEDOM. WHEN A
+          FINITE ELEMENT MODEL WITH AUTOSPC FAILS THE A-SET CHECK, IT IS NOT EVIDENT
+          THAT GROUNDING HAS OCCURRED. THE USE OF PARAM,SNORM WILL NOT ELIMINATE THE
+          SPURIOUS FAILURE.
+ 
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    29
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                            SUBCASE 2              
+                                           O U T P U T   F R O M   W E I G H T   C H E C K
+0                                                     DEGREES OF FREEDOM SET = G       
+0                                                     REFERENCE POINT =        0
+                                                                M O
+                      *  4.679094E-01 -1.782051E-13 -5.617425E-14 -3.195311E-11  4.800540E+00  4.569114E-02 *
+                      * -1.782051E-13  4.679094E-01 -9.289184E-13 -4.800540E+00 -7.861167E-11  7.001846E-04 *
+                      * -5.617425E-14 -9.289184E-13  4.679094E-01 -4.569114E-02 -7.001843E-04  3.352690E-11 *
+                      * -3.195311E-11 -4.800540E+00 -4.569114E-02  6.465340E+01 -1.546113E-03 -4.816015E-03 *
+                      *  4.800540E+00 -7.861167E-11 -7.001843E-04 -1.546113E-03  7.009525E+01  9.721852E-01 *
+                      *  4.569114E-02  7.001846E-04  3.352690E-11 -4.816015E-03  9.721852E-01  1.850125E+01 *
+                                                                 S
+                                           *  1.000000E+00  0.000000E+00  0.000000E+00 *
+                                           *  0.000000E+00  1.000000E+00  0.000000E+00 *
+                                           *  0.000000E+00  0.000000E+00  1.000000E+00 *
+                               DIRECTION
+                          MASS AXIS SYSTEM (S)     MASS              X-C.G.        Y-C.G.        Z-C.G.
+                                  X            4.679094E-01     -6.828909E-11 -9.764955E-02  1.025955E+01
+                                  Y            4.679094E-01      1.496411E-03 -1.680062E-10  1.025955E+01
+                                  Z            4.679094E-01      1.496410E-03 -9.764955E-02  7.165255E-11
+                                                                I(S)
+                                           *  1.539755E+01  1.614485E-03 -2.367565E-03 *
+                                           *  1.614485E-03  2.084386E+01 -5.034146E-01 *
+                                           * -2.367565E-03 -5.034146E-01  1.849679E+01 *
+                                                                I(Q)
+                                           *  1.839337E+01                             *
+                                           *                2.094728E+01               *
+                                           *                              1.539755E+01 *
+                                                                 Q
+                                           *  8.825699E-04  1.991141E-04  9.999996E-01 *
+                                           * -2.012315E-01 -9.795436E-01  3.726420E-04 *
+                                           *  9.795433E-01 -2.012318E-01 -8.244477E-04 *
+
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    30
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                            SUBCASE 2              
+ *** SYSTEM INFORMATION MESSAGE 6916 (DFMSYN)
+     DECOMP ORDERING METHOD CHOSEN: DEFAULT, ORDERING METHOD USED: BEND
+  
+ *** USER INFORMATION MESSAGE 4158 (DFMSA)
+ ---- STATISTICS FOR SPARSE DECOMPOSITION OF DATA BLOCK KLL      FOLLOW
+        NUMBER OF NEGATIVE TERMS ON FACTOR DIAGONAL =      4
+        MAXIMUM RATIO OF MATRIX DIAGONAL TO FACTOR DIAGONAL =  1.6E+09 AT ROW NUMBER        423
+ *** USER WARNING MESSAGE 4698 (DCMPD)
+     STATISTICS FOR DECOMPOSITION OF MATRIX KLL     .
+     THE FOLLOWING DEGREES OF FREEDOM HAVE FACTOR DIAGONAL RATIOS GREATER THAN
+      1.00000E+07 OR HAVE NEGATIVE TERMS ON THE FACTOR DIAGONAL.
+     USER INFORMATION:
+     THIS MESSAGE MAY BE IGNORED IF NO GRID POINT IDS OR HIGH RATIO MESSAGES APPEAR IN THE TABLE ON THE NEXT PAGE.
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    31
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                            SUBCASE 2              
+0                                                                                                                                   
+         GRID POINT ID       DEGREE OF FREEDOM   MATRIX/FACTOR DIAGONAL RATIO        MATRIX DIAGONAL                                
+                                                                                                                                    
+         4000515                    T1                  -9.04225E+07                   3.92282E+04
+         4000515                    T2                   1.03483E+08                   1.98925E+04
+         4000515                    T3                  -1.55649E+09                   1.33018E+05
+         4000515                    R1                  -1.62369E+05                   1.04406E+05
+         4000515                    R3                  -1.01557E+06                   5.84009E+04
+ ^^^ USER   WARNING MESSAGE 9136 (SEKRRS)    
+ ^^^ ENCOUNTERED EXCESSIVE PIVOT RATIOS IN MATRIX KLL.   
+ ^^^ USER INFORMATION:  AUTO-SUPORT WILL BE PERFORMED ON 
+ ^^^                    STRUCTURAL DEGREES OF FREEDOM IF 
+ ^^^                    NECESSARY.   
+ *** USER INFORMATION MESSAGE 22100 (LNNRIGL)
+     The mass matrix is relatively dense.
+     Redmult option may improve performance for Lanczos by setting System Cell 426 to 1.
+ *** SYSTEM INFORMATION MESSAGE 6916 (DFMSYN)
+     DECOMP ORDERING METHOD CHOSEN: DEFAULT, ORDERING METHOD USED: BEND
+ *** USER INFORMATION MESSAGE 5010 (LNCILS)
+     STURM SEQUENCE DATA FOR EIGENVALUE EXTRACTION.
+     TRIAL EIGENVALUE =  3.087378E+03, CYCLES =  8.843314E+00 NUMBER OF EIGENVALUES BELOW THIS VALUE =     6
+ *** USER INFORMATION MESSAGE 5010 (LNCILS)
+     STURM SEQUENCE DATA FOR EIGENVALUE EXTRACTION.
+     TRIAL EIGENVALUE =  1.239148E+06, CYCLES =  1.771666E+02 NUMBER OF EIGENVALUES BELOW THIS VALUE =    10
+
+ TABLE OF SHIFTS:  (LNNRIGL)
+ SHIFT #        SHIFT VALUE         FREQUENCY, CYCLES     # EIGENVALUES BELOW    # NEW EIGENVALUES FOUND
+     1.        3.0873784E+03          8.8433143E+00                 6                       11
+     2.        1.2391484E+06          1.7716658E+02                10                        0
+
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    32
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                            SUBCASE 2              
+0
+
+
+                          E I G E N V A L U E  A N A L Y S I S   S U M M A R Y   (READ MODULE) 
+
+
+
+                                     BLOCK SIZE USED ......................    7
+
+                                     NUMBER OF DECOMPOSITIONS .............    2
+
+                                     NUMBER OF ROOTS FOUND ................   10
+
+                                     NUMBER OF SOLVES REQUIRED ............    9
+
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    33
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                            SUBCASE 2              
+ 
+                                              R E A L   E I G E N V A L U E S
+   MODE    EXTRACTION      EIGENVALUE            RADIANS             CYCLES            GENERALIZED         GENERALIZED
+    NO.       ORDER                                                                       MASS              STIFFNESS
+        1         1       -6.262424E-03        7.913548E-02        1.259480E-02        1.000000E+00       -6.262424E-03
+        2         2       -2.766133E-03        5.259404E-02        8.370602E-03        1.000000E+00       -2.766133E-03
+        3         3       -1.127316E-03        3.357552E-02        5.343710E-03        1.000000E+00       -1.127316E-03
+        4         4       -8.039723E-04        2.835440E-02        4.512744E-03        1.000000E+00       -8.039723E-04
+        5         5        3.700727E-03        6.083360E-02        9.681968E-03        1.000000E+00        3.700727E-03
+        6         6        1.217350E-02        1.103336E-01        1.756013E-02        1.000000E+00        1.217350E-02
+        7         7        4.172445E+05        6.459447E+02        1.028053E+02        1.000000E+00        4.172445E+05
+        8         8        4.284679E+05        6.545746E+02        1.041788E+02        1.000000E+00        4.284679E+05
+        9         9        8.356177E+05        9.141213E+02        1.454869E+02        1.000000E+00        8.356177E+05
+       10        10        1.096143E+06        1.046969E+03        1.666302E+02        1.000000E+00        1.096143E+06
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    34
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                            SUBCASE 2              
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    35
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                            SUBCASE 2              
+
+                                       M O D A L   E F F E C T I V E   M A S S   S U M M A R Y
+
+
+
+                                                    TOTAL EFFECTIVE MASS FRACTION
+                                         REFERENCE POINT AT ORIGIN OF BASIC COORDINATE SYSTEM
+
+
+                        T1                T2                T3                R1                R2                R3
+                   1.000000E+00      1.000000E+00      1.000000E+00      1.000000E+00      1.000000E+00      1.000000E+00
+
+
+
+
+                                                        EFFECTIVE MASS MATRIX   
+                       ***                                                                                  ***
+                       *   4.679094E-01 -1.784296E-13 -5.638155E-14 -3.194875E-11  4.800540E+00  4.569114E-02 *
+                       *  -1.784296E-13  4.679094E-01 -9.289261E-13 -4.800540E+00 -7.861426E-11  7.001846E-04 *
+                       *  -5.638155E-14 -9.289261E-13  4.679094E-01 -4.569114E-02 -7.001843E-04  3.352791E-11 *
+                       *  -3.194875E-11 -4.800540E+00 -4.569114E-02  6.465340E+01 -1.546113E-03 -4.816015E-03 *
+                       *   4.800540E+00 -7.861412E-11 -7.001843E-04 -1.546113E-03  7.009525E+01  9.721852E-01 *
+                       *   4.569114E-02  7.001846E-04  3.352796E-11 -4.816015E-03  9.721852E-01  1.850125E+01 *
+                       ***                                                                                  ***
+
+                                                     A-SET RIGID BODY MASS MATRIX
+                       ***                                                                                  ***
+                       *   4.679094E-01 -1.782038E-13 -5.617002E-14 -3.195310E-11  4.800540E+00  4.569114E-02 *
+                       *  -1.782070E-13  4.679094E-01 -9.288789E-13 -4.800540E+00 -7.861172E-11  7.001846E-04 *
+                       *  -5.617989E-14 -9.288720E-13  4.679094E-01 -4.569114E-02 -7.001843E-04  3.352696E-11 *
+                       *  -3.195304E-11 -4.800540E+00 -4.569114E-02  6.465340E+01 -1.546113E-03 -4.816015E-03 *
+                       *   4.800540E+00 -7.861161E-11 -7.001843E-04 -1.546113E-03  7.009525E+01  9.721852E-01 *
+                       *   4.569114E-02  7.001846E-04  3.352693E-11 -4.816015E-03  9.721852E-01  1.850125E+01 *
+                       ***                                                                                  ***
+
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    36
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                            SUBCASE 2              
+
+                                                    MODAL EFFECTIVE MASS FRACTION
+
+    MODE    FREQUENCY                      T1                                  T2                                  T3
+     NO.                        FRACTION            SUM             FRACTION            SUM             FRACTION            SUM
+
+       1    1.259480E-02      6.498998E-02      6.498998E-02      2.475533E-01      2.475533E-01      2.812885E-02      2.812885E-02
+       2    8.370602E-03      5.241472E-02      1.174047E-01      8.366822E-03      2.559202E-01      5.575220E-01      5.856508E-01
+       3    5.343710E-03      7.645949E-01      8.819996E-01      5.377394E-02      3.096941E-01      1.130188E-01      6.986697E-01
+       4    4.512744E-03      2.111201E-02      9.031116E-01      5.670695E-01      8.767636E-01      1.499918E-03      7.001696E-01
+       5    9.681968E-03      7.977390E-02      9.828855E-01      1.209814E-02      8.888618E-01      2.976992E-01      9.978687E-01
+       6    1.756013E-02      1.711447E-02      1.000000E+00      1.111382E-01      1.000000E+00      2.131251E-03      1.000000E+00
+       7    1.028053E+02      1.367121E-20      1.000000E+00      2.316317E-18      1.000000E+00      7.021464E-20      1.000000E+00
+       8    1.041788E+02      4.147308E-19      1.000000E+00      3.161256E-18      1.000000E+00      4.704011E-21      1.000000E+00
+       9    1.454869E+02      6.787472E-22      1.000000E+00      1.016008E-19      1.000000E+00      8.969171E-21      1.000000E+00
+      10    1.666302E+02      5.741516E-22      1.000000E+00      2.200274E-26      1.000000E+00      2.799895E-20      1.000000E+00
+
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    37
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                            SUBCASE 2              
+
+                                                    MODAL EFFECTIVE MASS FRACTION
+
+    MODE    FREQUENCY                      R1                                  R2                                  R3
+     NO.                        FRACTION            SUM             FRACTION            SUM             FRACTION            SUM
+
+       1    1.259480E-02      1.443860E-01      1.443860E-01      7.914437E-03      7.914437E-03      5.916072E-01      5.916072E-01
+       2    8.370602E-03      6.401777E-03      1.507877E-01      2.356319E-01      2.435463E-01      1.027488E-01      6.943560E-01
+       3    5.343710E-03      6.645765E-02      2.172454E-01      6.680855E-01      9.116318E-01      2.690531E-02      7.212613E-01
+       4    4.512744E-03      7.657382E-01      9.829836E-01      6.476779E-02      9.763996E-01      1.458580E-01      8.671193E-01
+       5    9.681968E-03      9.141316E-05      9.830750E-01      2.177013E-02      9.981697E-01      8.665952E-02      9.537789E-01
+       6    1.756013E-02      1.692501E-02      1.000000E+00      1.830299E-03      1.000000E+00      4.622115E-02      1.000000E+00
+       7    1.028053E+02      6.858592E-22      1.000000E+00      3.899392E-19      1.000000E+00      1.980454E-18      1.000000E+00
+       8    1.041788E+02      6.186035E-19      1.000000E+00      6.819295E-21      1.000000E+00      3.389946E-18      1.000000E+00
+       9    1.454869E+02      1.024807E-20      1.000000E+00      2.739775E-20      1.000000E+00      2.078075E-21      1.000000E+00
+      10    1.666302E+02      1.753780E-21      1.000000E+00      1.195041E-22      1.000000E+00      7.915077E-20      1.000000E+00
+
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    38
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                            SUBCASE 2              
+ *** USER INFORMATION MESSAGE 7321 (SEDRDR)
+    DATA RECOVERY FOR SUPERELEMENT        0 IS NOW INITIATED.
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK CASECC   WRITTEN ON FORTRAN UNIT  12, TRL =
+                    103                 2                 0              1208                 0                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =     1208 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       24 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =     2438 WORDS.)
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK GPLS     WRITTEN ON FORTRAN UNIT  12, TRL =
+                    101               307                 0                 0                 0                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =      614 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       24 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =      952 WORDS.)
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK CSTMS    WRITTEN ON FORTRAN UNIT  12, TRL =
+                    101               307                 1                 0                 0                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =       14 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       19 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =       40 WORDS.)
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK GPDTS    WRITTEN ON FORTRAN UNIT  12, TRL =
+                    102               307                 0                 0                 0                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =     2149 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       19 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =     2175 WORDS.)
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK EPTS     WRITTEN ON FORTRAN UNIT  12, TRL =
+                    101                 0                 0                 0              1024                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =      397 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       24 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =      430 WORDS.)
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK MPTS     WRITTEN ON FORTRAN UNIT  12, TRL =
+                    101             32768                 0                 0                 0                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =       15 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       24 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =       48 WORDS.)
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    39
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                            SUBCASE 2              
+0                                                                                                                                   
+         GRID POINT ID       DEGREE OF FREEDOM   MATRIX/FACTOR DIAGONAL RATIO        MATRIX DIAGONAL                                
+                                                                                                                                    
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK GEOM2S   WRITTEN ON FORTRAN UNIT  12, TRL =
+                    101                 2                 0                 0             33792                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =      759 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       34 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =     1021 WORDS.)
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK GEOM4S   WRITTEN ON FORTRAN UNIT  12, TRL =
+                    103                 0                 0                 0                 0              2560                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =       37 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       29 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =       96 WORDS.)
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK GEOM1S   WRITTEN ON FORTRAN UNIT  12, TRL =
+                    104              4100              2048                 8                 0                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =      843 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       39 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =     1454 WORDS.)
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK BGPDTS   WRITTEN ON FORTRAN UNIT  12, TRL =
+                    105               307                 0                 0                 0                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =     1228 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       19 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =     1254 WORDS.)
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK DYNAMICS WRITTEN ON FORTRAN UNIT  12, TRL =
+                    102               256                 0                 0                 0                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =       30 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       24 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =       63 WORDS.)
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK EQEXINS  WRITTEN ON FORTRAN UNIT  12, TRL =
+                    101               307                 0                 0                 0                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =      614 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       24 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =     1258 WORDS.)
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK LAMA     WRITTEN ON FORTRAN UNIT  12, TRL =
+                    101                10                 0                 0                 0                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =      146 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       24 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =      246 WORDS.)
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    40
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                            SUBCASE 2              
+0                                                                                                                                   
+         GRID POINT ID       DEGREE OF FREEDOM   MATRIX/FACTOR DIAGONAL RATIO        MATRIX DIAGONAL                                
+                                                                                                                                    
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK BOPHIG   WRITTEN ON FORTRAN UNIT  12, TRL =
+                    101                 0             24560                 5                20                 0                 1
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =     2456 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =      114 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =    26127 WORDS.)
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK OEF1     WRITTEN ON FORTRAN UNIT  12, TRL =
+                    101                63                 5                 5                20                 0                 1
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =     4200 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =      114 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =    43567 WORDS.)
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    41
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                            SUBCASE 2              
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    42
+                                                                                                        SUPERELEMENT 0              
+0                                                                                                            SUBCASE 2              
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    43
+                                                                                                        SUPERELEMENT 10             
+0                                                                                                            SUBCASE 2              
+ *** USER INFORMATION MESSAGE 7321 (SEDRDR)
+    DATA RECOVERY FOR SUPERELEMENT       10 IS NOW INITIATED.
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK GPLS     WRITTEN ON FORTRAN UNIT  12, TRL =
+                    101               263                 0                 0                 0                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =      526 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       24 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =      820 WORDS.)
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK GPDTS    WRITTEN ON FORTRAN UNIT  12, TRL =
+                    102               263                 0                 0                 0                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =     1841 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       19 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =     1867 WORDS.)
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK GEOM2S   WRITTEN ON FORTRAN UNIT  12, TRL =
+                    101                 0                 0                 0             36864                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =      205 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       29 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =      359 WORDS.)
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK GEOM4S   WRITTEN ON FORTRAN UNIT  12, TRL =
+                    103                 0                 0                 0                 0                16                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =      529 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       24 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =      562 WORDS.)
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK GEOM1S   WRITTEN ON FORTRAN UNIT  12, TRL =
+                    104                 0                 0                 8                 0                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =      491 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       24 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =      524 WORDS.)
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK BGPDTS   WRITTEN ON FORTRAN UNIT  12, TRL =
+                    105               263                 0                 0                 0                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =     1052 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       19 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =     1078 WORDS.)
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    44
+                                                                                                        SUPERELEMENT 10             
+0                                                                                                            SUBCASE 2              
+0                                                                                                                                   
+         GRID POINT ID       DEGREE OF FREEDOM   MATRIX/FACTOR DIAGONAL RATIO        MATRIX DIAGONAL                                
+                                                                                                                                    
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK EQEXINS  WRITTEN ON FORTRAN UNIT  12, TRL =
+                    101               263                 0                 0                 0                 0                 0
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =      526 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =       24 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =     1082 WORDS.)
+ *** SYSTEM INFORMATION MESSAGE 6531 (DRMH3C)
+     MATRIX  102 HAS MORE MODES (   10) THAN  CASE CONTROL RECORDS (    1)
+     THE LAST CASE CONTROL RECORD WILL BE USED FOR REMAINING MODES
+ *** USER INFORMATION MESSAGE 4114 (OUTPBN2)
+     DATA BLOCK OUGV1    WRITTEN ON FORTRAN UNIT  12, TRL =
+                    101                 0                 0                 5                 5                20                 7
+     (MAXIMUM POSSIBLE FORTRAN RECORD SIZE =    65538 WORDS.)
+     (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =      488 WORDS.)
+     (NUMBER OF FORTRAN RECORDS WRITTEN =      114 RECORDS.)
+     (TOTAL DATA WRITTEN FOR DATA BLOCK =     6447 WORDS.)
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    45
+                                                                                                        SUPERELEMENT 10             
+0                                                                                                            SUBCASE 2              
+ *** USER INFORMATION MESSAGE 4110 (OUTPBN2)
+                                 END-OF-DATA SIMULATION ON FORTRAN UNIT 12
+                                 (MAXIMUM SIZE OF FORTRAN RECORDS WRITTEN =      1 WORDS.)
+                                       (NUMBER OF FORTRAN RECORDS WRITTEN =      1 RECORDS.)
+                                       (TOTAL DATA WRITTEN FOR EOF MARKER =      1 WORDS.)
+1    xxx GROUNDCHECK                                                      MAY   5, 2020  SIMCENTER NASTRAN  3/22/19   PAGE    46
+                                                                                                        SUPERELEMENT 10             
+0                                                                                                            SUBCASE 2              
+ * * * *  D B D I C T   P R I N T  * * * *      SUBDMAP = PRTSUM  ,  DMAP STATEMENT NO.     28
+
+
+
+0                                   * * * *  A N A L Y S I S  S U M M A R Y  T A B L E  * * * *
+0 SEID  PEID PROJ VERS APRCH      SEMG SEMR SEKR SELG SELR MODES DYNRED SOLLIN PVALID SOLNL LOOPID DESIGN CYCLE SENSITIVITY
+ --------------------------------------------------------------------------------------------------------------------------
+     0     0    1    1 '        '    T    T    T    T    T     T      F      T      0     F     -1            0           F
+    10    10    1    1 '        '    T    T    T    T    T     F      F      F      0     F     -1            0           F
+0SEID = SUPERELEMENT ID.
+ PEID = PRIMARY SUPERELEMENT ID OF IMAGE SUPERELEMENT.
+ PROJ = PROJECT ID NUMBER.
+ VERS = VERSION ID.
+ APRCH = BLANK FOR STRUCTURAL ANALYSIS.  HEAT FOR HEAT TRANSFER ANALYSIS.
+ SEMG = STIFFNESS AND MASS MATRIX GENERATION STEP.
+ SEMR = MASS MATRIX REDUCTION STEP (INCLUDES EIGENVALUE SOLUTION FOR MODES).
+ SEKR = STIFFNESS MATRIX REDUCTION STEP.
+ SELG = LOAD MATRIX GENERATION STEP.
+ SELR = LOAD MATRIX REDUCTION STEP. 
+ MODES = T (TRUE) IF NORMAL MODES OR BUCKLING MODES CALCULATED.
+ DYNRED = T (TRUE) MEANS GENERALIZED DYNAMIC AND/OR COMPONENT MODE REDUCTION PERFORMED.
+ SOLLIN = T (TRUE) IF LINEAR SOLUTION EXISTS IN DATABASE.
+ PVALID = P-DISTRIBUTION ID OF P-VALUE FOR P-ELEMENTS
+ LOOPID = THE LAST LOOPID VALUE USED IN THE NONLINEAR ANALYSIS.  USEFUL FOR RESTARTS.
+ SOLNL = T (TRUE) IF NONLINEAR SOLUTION EXISTS IN DATABASE.
+ DESIGN CYCLE = THE LAST DESIGN CYCLE (ONLY VALID IN OPTIMIZATION).
+ SENSITIVITY = SENSITIVITY MATRIX GENERATION FLAG.
+1                                        * * * END OF JOB * * *
+ 
+ 
