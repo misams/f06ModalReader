@@ -29,7 +29,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("Modal Effective Mass Fraction - NXNastran");
+        this.primaryStage.setTitle("Modal Effective Mass Fraction Reader v0.9.1");
 
         initRootLayout();
     }

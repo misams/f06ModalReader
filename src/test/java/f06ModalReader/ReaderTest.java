@@ -44,6 +44,12 @@ public class ReaderTest {
 			System.out.println(f06file5.getFile());
 			System.out.println(f06file5.getRow(f06file5.getNumberOfModes()-1));
 
+			// SOL103 multiple of 50
+			final NXReader f06file6 = new NXReader(
+				"src/test/java/f06ModalReader/test_f06_files/SOL103_multiple_of_50.f06");
+			System.out.println(f06file6.getFile());
+			System.out.println(f06file6.getRow(f06file6.getNumberOfModes()-1));
+
 		} catch (final NullPointerException e) {
 			System.err.println("Null Pointer");
 		}

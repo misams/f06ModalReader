@@ -4,7 +4,7 @@
 
     <groupId>f06ModalReader</groupId>
     <artifactId>f06ModalReader</artifactId>
-    <version>0.9</version>
+    <version>0.9.1</version>
     <packaging>jar</packaging>
 
     <name>f06ModalReader</name>

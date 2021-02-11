@@ -42,6 +42,10 @@ public class NXReader {
 		try (BufferedReader in = Files.newBufferedReader(Paths.get(path), StandardCharsets.ISO_8859_1)) {
 			String line = in.readLine(); // read first line
 			while (line != null) { // loop complete file
+				// CASE CONTROL --> check which MEFFMASS results written in f06 file
+				//if (Pattern.compile("MEFFMASS").matcher(line).find() == true ) {
+				//	System.out.println(line.split("[\\(\\)]")[1]);
+				//}
 				// number of evaluated eigenvalues
 				if (Pattern.compile("NUMBER\\sOF\\sROOTS\\sFOUND").matcher(line).find() == true 
 					&& rootsFound == 0 ) {
@@ -75,7 +79,7 @@ public class NXReader {
 						line = in.readLine();
 						// handle >50-modes 
 						counter_50 += 1;
-						if( counter_50==50) {
+						if( counter_50==50 && j<nmbrOfRoots-1) {
 							for (int i = 0; i < 7; i++) {
 								line = in.readLine();
 							} // skip 7 lines after end of 50-modes block
@@ -105,7 +109,7 @@ public class NXReader {
 						line = in.readLine();
 						// handle >50-modes 
 						counter_50 += 1;
-						if( counter_50==50) {
+						if( counter_50==50 && j<nmbrOfRoots-1) {
 							for (int i = 0; i < 7; i++) {
 								line = in.readLine();
 							} // skip 7 lines after end of 50-modes block
